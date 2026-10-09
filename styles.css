@@ -69,3 +69,49 @@ footer{border-top:1px solid var(--rule);padding:35px 22px 50px;text-align:center
 .contents { margin:2rem 0 3rem; padding:1.25rem 1.5rem; border-top:1px solid var(--rule,#8c745a); border-bottom:1px solid var(--rule,#8c745a); background:rgba(255,255,255,.18); }
 .contents h2 { margin-top:0; } .contents ol { padding-left:1.4rem; } .contents li { margin:.28rem 0; }
 .manuscript-figure { margin:2rem auto; text-align:center; } .manuscript-figure img { display:block; max-width:100%; width:auto; height:auto; max-height:760px; margin:0 auto; border:1px solid rgba(90,70,50,.35); box-shadow:0 8px 24px rgba(50,35,20,.12); } .manuscript-figure figcaption { margin-top:.55rem; font-size:.9rem; font-style:italic; opacity:.75; }
+
+
+/* Discussion section */
+.discussion-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px 70px;
+  border-top: 1px solid var(--rule);
+}
+.discussion-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.discussion-section .section-title {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.discussion-intro {
+  max-width: 680px;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+}
+#disqus_thread {
+  padding: 24px;
+  background: rgba(255, 255, 255, .16);
+  border: 1px solid rgba(136, 118, 93, .45);
+  border-radius: 2px;
+}
+.discussion-section noscript {
+  display: block;
+  margin-top: 16px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 720px) {
+  .discussion-section {
+    padding: 36px 18px 48px;
+  }
+  #disqus_thread {
+    padding: 14px;
+  }
+}
