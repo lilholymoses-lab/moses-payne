@@ -115,3 +115,8 @@ footer{border-top:1px solid var(--rule);padding:35px 22px 50px;text-align:center
     padding: 14px;
   }
 }
+
+/* Section audio players */
+.section-audio{margin:1rem 0 1.6rem}
+.section-audio audio{width:100%;max-width:560px;display:block}
+.section-audio.center audio{margin:0 auto}
