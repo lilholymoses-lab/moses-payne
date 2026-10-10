@@ -158,3 +158,9 @@ html[data-theme="dark"] .follow-form input::placeholder{color:var(--muted)}
 .glossary{max-width:780px;margin:2rem auto 0}
 .glossary dt{font-size:1.25rem;margin:1.6rem 0 .3rem}
 .glossary dd{margin:0 0 1rem;color:var(--ink)}
+
+/* Hide-on-scroll header + floating theme toggle */
+.site-header{transition:transform .32s ease}
+.site-header.hidden{transform:translateY(-110%)}
+.theme-toggle-float{position:fixed;right:18px;bottom:18px;z-index:20;background:var(--paper);box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s ease}
+.theme-toggle-float.visible{opacity:1;pointer-events:auto}
