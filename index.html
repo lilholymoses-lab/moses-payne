@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en"><head><script>(function(){try{var t=localStorage.getItem("gob-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Geometry of Becoming — The Cosmic Purpose</title>
 <link rel="stylesheet" href="styles.css"><style>
@@ -20,10 +20,10 @@
 <a href="index.html">Introduction</a>
 <a href="project-1.html">Project 1</a>
 <a href="bridge.html">The Bridge</a>
-<a href="project-2.html">Project 2</a>
+<a href="project-2.html">Project 2</a><a href="glossary.html">Framework Glossary</a>
 <a href="about.html">About the Author</a>
 <a href="further-readings.html">Further Readings</a>
-</div></nav></header>
+</div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"><svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></nav></header>
 <section class="hero">
 <img class="cover-image" src="cover.jpg" alt="The Geometry of Becoming cover">
 <div class="hero-inner">
@@ -62,6 +62,20 @@
 <div class="prose"><blockquote>“Relationship is the structure of reality.”</blockquote>
 <p>This is the proposition at the center of Project 1. The work that follows asks what might happen if it is taken seriously.</p></div></section>
 
+
+<section class="section follow-section" id="follow">
+<div class="ornament">&#10022; &#10022; &#10022;</div>
+<h2 class="section-title">Follow the Work</h2>
+<p class="follow-intro">The Geometry of Becoming is being written and recorded in the open. Leave your email and I will let you know when new sections and audio are published.</p>
+<form class="follow-form" id="follow-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<label class="visually-hidden" for="follow-email">Email address</label>
+<input type="email" id="follow-email" name="email" placeholder="Your email address" required autocomplete="email">
+<button type="submit">Notify me</button>
+</form>
+<p class="follow-note" id="follow-note" hidden></p>
+<p class="follow-privacy">No spam, ever. Unsubscribe anytime.</p>
+</section>
+
 <section class="discussion-section" id="discussion">
   <div class="discussion-inner">
     <div class="ornament">✦ ✦ ✦</div>
@@ -87,4 +101,26 @@
 
 </main>
 <footer>© Moses · The Geometry of Becoming</footer>
+<script src="theme.js" defer></script>
+<script>
+(function(){
+  var form=document.getElementById('follow-form');
+  if(!form) return;
+  var note=document.getElementById('follow-note');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(form.action.indexOf('YOUR_FORM_ID')!==-1){
+      note.hidden=false;
+      note.textContent='Email signups are opening soon \u2014 check back shortly.';
+      return;
+    }
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}}).then(function(r){
+      note.hidden=false;
+      if(r.ok){ note.textContent='Thank you \u2014 you are on the list.'; form.reset(); }
+      else { note.textContent='Something went wrong. Please try again.'; }
+    }).catch(function(){ note.hidden=false; note.textContent='Something went wrong. Please try again.'; });
+  });
+})();
+</script>
+
 </body></html>
