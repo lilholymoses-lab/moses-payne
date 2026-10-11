@@ -164,3 +164,8 @@ html[data-theme="dark"] .follow-form input::placeholder{color:var(--muted)}
 .site-header.hidden{transform:translateY(-110%)}
 .theme-toggle-float{position:fixed;right:18px;bottom:18px;z-index:20;background:var(--paper);box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .25s ease}
 .theme-toggle-float.visible{opacity:1;pointer-events:auto}
+
+.glossary-purpose{font-style:italic;opacity:.85;max-width:42rem}
+.glossary-section{margin-top:2.75rem}
+.glossary-term{margin-top:1.4rem}
+.glossary-term h3{margin-bottom:.3rem}
