@@ -180,3 +180,23 @@ html[data-theme="dark"] .follow-form input::placeholder{color:var(--muted)}
 
 .hero-ornament{color:var(--ornament-gold);max-width:660px;margin:0 auto;padding:6px 0 18px}
 .hero-ornament svg{width:100%;height:auto;display:block}
+
+/* ---- Tap-a-term glossary ---- */
+.gloss-term{background:none;border:none;padding:0;margin:0;font:inherit;color:inherit;border-bottom:1px dotted var(--ornament-gold);cursor:pointer;display:inline}
+.gloss-term:hover{color:var(--ornament-gold)}
+#gloss-popup{position:fixed;z-index:200;max-width:320px;background:var(--paper,#f4ecd8);color:var(--ink);border:1px solid var(--ornament-gold);border-radius:4px;box-shadow:0 8px 28px rgba(0,0,0,.25);padding:14px 16px 12px;font-family:Georgia,"Times New Roman",serif}
+#gloss-popup[hidden]{display:none}
+.gloss-close{position:absolute;top:4px;right:8px;background:none;border:none;font-size:1.3rem;line-height:1;color:var(--muted,#8a7a5f);cursor:pointer;padding:4px}
+.gloss-name{margin:0 22px 6px 0;font-variant:small-caps;letter-spacing:.08em;color:var(--ornament-gold);font-size:1.02rem}
+.gloss-def{margin:0 0 8px;font-size:.92rem;line-height:1.5}
+.gloss-link{font-size:.85rem;color:var(--ornament-gold);text-decoration:none}
+.gloss-link:hover{text-decoration:underline}
+
+/* ---- Gold drop caps ---- */
+.chapter-open::first-letter{float:left;font-size:3.4em;line-height:.82;padding:.05em .1em 0 0;color:var(--ornament-gold);font-weight:600}
+
+/* ---- In brief boxes ---- */
+.in-brief{border:1px solid var(--ornament-gold);border-radius:3px;padding:14px 18px;margin:0 0 28px;background:rgba(138,109,31,.07)}
+.in-brief-label{font-variant:small-caps;letter-spacing:.16em;color:var(--ornament-gold);margin:0 0 6px;font-size:.88rem}
+.in-brief p{margin:0 0 6px}
+.in-brief p:last-child{margin-bottom:0}
