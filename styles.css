@@ -199,3 +199,31 @@ html[data-theme="dark"] .gloss-term{background:rgba(217,182,74,.20)}
 .in-brief-label{font-variant:small-caps;letter-spacing:.16em;color:var(--ornament-gold);margin:0 0 6px;font-size:.88rem}
 .in-brief p{margin:0 0 6px}
 .in-brief p:last-child{margin-bottom:0}
+
+/* ---- Framework map (five-part pattern) ---- */
+.framework-map{margin:2.4em auto;max-width:760px;text-align:center}
+.framework-map-title{font-variant:small-caps;letter-spacing:.22em;color:var(--ornament-gold);margin:0 0 1.1em;font-size:.95rem}
+.fm-stages{display:flex;justify-content:center;align-items:center;gap:.55em}
+.fm-medal{background:transparent;border:1.5px solid var(--ornament-gold);border-radius:50%;width:104px;height:104px;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2em;cursor:pointer;color:var(--ink);font-family:inherit;padding:0;transition:background .25s,box-shadow .25s,transform .25s}
+.fm-medal .fm-num{font-size:.78rem;letter-spacing:.12em;color:var(--ornament-gold)}
+.fm-medal .fm-name{font-size:.8rem;line-height:1.2;padding:0 .4em}
+.fm-medal:hover{transform:translateY(-2px)}
+.fm-medal[aria-pressed="true"]{background:rgba(138,109,31,.14);box-shadow:0 0 0 3px rgba(138,109,31,.18)}
+html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,74,.16);box-shadow:0 0 0 3px rgba(217,182,74,.2)}
+.fm-panel{margin:1.3em auto 0;max-width:640px;text-align:left;border:1px solid var(--rule,#c9bfa8);border-radius:8px;padding:1.1em 1.3em;background:rgba(138,109,31,.06)}
+.fm-stage{display:none}
+.fm-stage.active{display:block}
+.fm-stage h3{margin:0 0 .45em;font-size:1.02rem;color:var(--ornament-gold);font-variant:small-caps;letter-spacing:.1em}
+.fm-stage p{margin:0}
+.fm-nav{display:flex;justify-content:space-between;align-items:center;margin-top:.9em}
+.fm-nav button{background:none;border:1.5px solid var(--ornament-gold);border-radius:50%;width:2.1em;height:2.1em;color:var(--ornament-gold);cursor:pointer;font-size:1rem;line-height:1;padding:0}
+.fm-nav button:hover{background:rgba(138,109,31,.12)}
+.fm-gloss{font-size:.92rem;color:var(--ornament-gold);text-decoration:none}
+.fm-gloss:hover{text-decoration:underline}
+@media (max-width:520px){
+  .fm-stages{gap:.35em}
+  .fm-medal{width:62px;height:62px}
+  .fm-medal .fm-num{font-size:.62rem}
+  .fm-medal .fm-name{font-size:.6rem;padding:0 .2em}
+  .fm-panel{padding:.9em 1em}
+}
