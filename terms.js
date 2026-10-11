@@ -313,9 +313,10 @@ const GLOSSARY_TERMS = [
         if (!term) continue;
         if (!frag) frag = document.createDocumentFragment();
         out.push(document.createTextNode(text.slice(last, m.index)));
-        var b = document.createElement('button');
-        b.type = 'button';
+        var b = document.createElement('span');
         b.className = 'gloss-term';
+        b.setAttribute('role', 'button');
+        b.setAttribute('tabindex', '0');
         b.textContent = m[1];
         b.setAttribute('data-term-id', term.id);
         b.setAttribute('aria-label', term.name + ': show definition');
@@ -355,10 +356,7 @@ const GLOSSARY_TERMS = [
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
     document.addEventListener('scroll', hide, { passive: true, capture: true });
-    document.addEventListener('click', function (e) {
-      var el = e.target.closest('.gloss-term');
-      if (!el) return;
-      e.stopPropagation();
+    function showTerm(el) {
       var term = null;
       var tid = el.getAttribute('data-term-id');
       for (var i = 0; i < GLOSSARY_TERMS.length; i++) {
@@ -378,6 +376,16 @@ const GLOSSARY_TERMS = [
       if (y < 12) y = 12;
       popup.style.left = x + 'px';
       popup.style.top = y + 'px';
+    }
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('.gloss-term');
+      if (!el) return;
+      e.stopPropagation();
+      showTerm(el);
+    });
+    document.addEventListener('keydown', function (e) {
+      var el = e.target && e.target.closest ? e.target.closest('.gloss-term') : null;
+      if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); showTerm(el); }
     });
   }
 
