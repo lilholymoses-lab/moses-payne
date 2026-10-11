@@ -376,10 +376,4 @@ const GLOSSARY_TERMS = [
     });
   }
 
-  // ---- gold drop caps on each chapter opening ----
-  document.querySelectorAll('h2[id]').forEach(function (h) {
-    var el = h.nextElementSibling;
-    while (el && el.tagName !== 'H2' && (el.tagName !== 'P' || el.classList.contains('audio-caption') || el.classList.contains('subtitle'))) el = el.nextElementSibling;
-    if (el && el.tagName === 'P') el.classList.add('chapter-open');
-  });
 })();
