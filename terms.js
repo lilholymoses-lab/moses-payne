@@ -47,7 +47,7 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-reciprocal-dynamism",
   "name": "Reciprocal Dynamism",
-  "def": "The structured, reciprocal dynamism through which distinct centers of being co-arise, co-inform, and co-transcend — turning potential into actuality, interior process into exterior expression, and the One into the Many. Within the framework, reciprocal dynamism names the mutual, active character of relationship: becoming happens not to isolated things, but through their reciprocal participation in one another."
+  "def": "Within the framework, reciprocal dynamism names the mutual, active character of relationship: becoming happens not to isolated things, but through their reciprocal participation in one another."
  },
  {
   "id": "term-relationality",
