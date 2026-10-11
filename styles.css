@@ -193,8 +193,6 @@ html[data-theme="dark"] .gloss-term{background:rgba(217,182,74,.20)}
 .gloss-link{font-size:.85rem;color:var(--ornament-gold);text-decoration:none}
 .gloss-link:hover{text-decoration:underline}
 
-/* ---- Gold drop caps ---- */
-.chapter-open::first-letter{float:left;font-size:2.2em;line-height:.9;padding:.08em .12em 0 0;color:var(--ornament-gold);font-weight:600}
 
 /* ---- In brief boxes ---- */
 .in-brief{border:1px solid var(--ornament-gold);border-radius:3px;padding:14px 18px;margin:0 0 28px;background:rgba(138,109,31,.07)}
