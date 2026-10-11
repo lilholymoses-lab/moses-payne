@@ -175,3 +175,4 @@ html[data-theme="dark"] .follow-form input::placeholder{color:var(--muted)}
 .glossary-toc p{margin:0}
 .glossary-toc a{white-space:nowrap}
 .glossary-term{scroll-margin-top:110px}
+.audio-caption{font-style:italic;color:var(--muted);font-size:.9rem;margin:.5rem 0}
