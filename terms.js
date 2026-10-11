@@ -265,6 +265,7 @@ const GLOSSARY_TERMS = [
   // Skip the glossary page itself
   if (document.querySelector('.glossary-term')) return;
   if (typeof GLOSSARY_TERMS === 'undefined' || !Array.isArray(GLOSSARY_TERMS)) return;
+  var glossOff = document.body && document.body.getAttribute('data-gloss') === 'off';
 
   var EXCLUDE_SINGLE = { 'inside': 1, 'outside': 1, 'bridge': 1 };
 
@@ -328,54 +329,56 @@ const GLOSSARY_TERMS = [
     });
   }
 
-  var scope = document.querySelector('main') || document.body;
-  wrapMatches(scope, multiRe, false);
-  wrapMatches(scope, singleRe, true);
+  if (!glossOff) {
+    var scope = document.querySelector('main') || document.body;
+    wrapMatches(scope, multiRe, false);
+    wrapMatches(scope, singleRe, true);
+  }
 
   // ---- popup ----
-  var popup = document.createElement('div');
-  popup.id = 'gloss-popup';
-  popup.hidden = true;
-  popup.innerHTML = '<button class="gloss-close" aria-label="Close definition">&times;</button>' +
-    '<p class="gloss-name"></p><p class="gloss-def"></p>' +
-    '<a class="gloss-link" href="glossary.html">Framework Glossary &rarr;</a>';
-  document.body.appendChild(popup);
-  var popName = popup.querySelector('.gloss-name'),
-      popDef = popup.querySelector('.gloss-def'),
-      popLink = popup.querySelector('.gloss-link');
-
-  function hide() { popup.hidden = true; }
-  popup.querySelector('.gloss-close').addEventListener('click', function (e) { e.stopPropagation(); hide(); });
-  document.addEventListener('click', function (e) {
-    if (!popup.hidden && !popup.contains(e.target) && !e.target.closest('.gloss-term')) hide();
-  });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
-  document.addEventListener('scroll', hide, { passive: true, capture: true });
-
-  document.addEventListener('click', function (e) {
-    var el = e.target.closest('.gloss-term');
-    if (!el) return;
-    e.stopPropagation();
-    var term = null;
-    var tid = el.getAttribute('data-term-id');
-    for (var i = 0; i < GLOSSARY_TERMS.length; i++) {
-      if (GLOSSARY_TERMS[i].id === tid) { term = GLOSSARY_TERMS[i]; break; }
-    }
-    if (!term) return;
-    popName.textContent = term.name;
-    popDef.textContent = term.def;
-    popLink.href = 'glossary.html#' + term.id;
-    popup.hidden = false;
-    var r = el.getBoundingClientRect();
-    var pw = popup.offsetWidth, ph = popup.offsetHeight;
-    var x = r.left + r.width / 2 - pw / 2;
-    x = Math.max(12, Math.min(x, window.innerWidth - pw - 12));
-    var y = r.bottom + 10;
-    if (y + ph > window.innerHeight - 12) y = r.top - ph - 10;
-    if (y < 12) y = 12;
-    popup.style.left = x + 'px';
-    popup.style.top = y + 'px';
-  });
+  if (!glossOff) {
+    var popup = document.createElement('div');
+    popup.id = 'gloss-popup';
+    popup.hidden = true;
+    popup.innerHTML = '<button class="gloss-close" aria-label="Close definition">&times;</button>' +
+      '<p class="gloss-name"></p><p class="gloss-def"></p>' +
+      '<a class="gloss-link" href="glossary.html">Framework Glossary &rarr;</a>';
+    document.body.appendChild(popup);
+    var popName = popup.querySelector('.gloss-name'),
+        popDef = popup.querySelector('.gloss-def'),
+        popLink = popup.querySelector('.gloss-link');
+    function hide() { popup.hidden = true; }
+    popup.querySelector('.gloss-close').addEventListener('click', function (e) { e.stopPropagation(); hide(); });
+    document.addEventListener('click', function (e) {
+      if (!popup.hidden && !popup.contains(e.target) && !e.target.closest('.gloss-term')) hide();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+    document.addEventListener('scroll', hide, { passive: true, capture: true });
+    document.addEventListener('click', function (e) {
+      var el = e.target.closest('.gloss-term');
+      if (!el) return;
+      e.stopPropagation();
+      var term = null;
+      var tid = el.getAttribute('data-term-id');
+      for (var i = 0; i < GLOSSARY_TERMS.length; i++) {
+        if (GLOSSARY_TERMS[i].id === tid) { term = GLOSSARY_TERMS[i]; break; }
+      }
+      if (!term) return;
+      popName.textContent = term.name;
+      popDef.textContent = term.def;
+      popLink.href = 'glossary.html#' + term.id;
+      popup.hidden = false;
+      var r = el.getBoundingClientRect();
+      var pw = popup.offsetWidth, ph = popup.offsetHeight;
+      var x = r.left + r.width / 2 - pw / 2;
+      x = Math.max(12, Math.min(x, window.innerWidth - pw - 12));
+      var y = r.bottom + 10;
+      if (y + ph > window.innerHeight - 12) y = r.top - ph - 10;
+      if (y < 12) y = 12;
+      popup.style.left = x + 'px';
+      popup.style.top = y + 'px';
+    });
+  }
 
   // ---- gold drop caps on each chapter opening ----
   document.querySelectorAll('h2[id]').forEach(function (h) {
