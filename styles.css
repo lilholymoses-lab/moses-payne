@@ -1,4 +1,5 @@
 :root{
+  --ornament-gold:#8a6d1f;
   --paper:#ddd0b8;
   --paper-dark:#c8b797;
   --ink:#29231d;
@@ -128,7 +129,7 @@ footer{border-top:1px solid var(--rule);padding:35px 22px 50px;text-align:center
 .theme-toggle .icon-sun{display:none}
 
 /* Dark mode */
-html[data-theme="dark"]{--paper:#201913;--paper-dark:#171310;--ink:#e9dfca;--muted:#b6a88e;--rule:#6b5b44;--accent:#e0be8d;--link:#e6c98f}
+html[data-theme="dark"]{--ornament-gold:#d9b64a;--paper:#201913;--paper-dark:#171310;--ink:#e9dfca;--muted:#b6a88e;--rule:#6b5b44;--accent:#e0be8d;--link:#e6c98f}
 html[data-theme="dark"] body{background:radial-gradient(circle at 20% 10%,rgba(255,255,255,.05),transparent 30%),linear-gradient(rgba(32,25,19,.99),rgba(23,19,16,.99))}
 html[data-theme="dark"] body:before{opacity:.04}
 html[data-theme="dark"] .site-header{background:rgba(26,21,16,.96)}
@@ -176,3 +177,6 @@ html[data-theme="dark"] .follow-form input::placeholder{color:var(--muted)}
 .glossary-toc a{white-space:nowrap}
 .glossary-term{scroll-margin-top:110px}
 .audio-caption{font-style:italic;color:var(--muted);font-size:.9rem;margin:.5rem 0}
+
+.hero-ornament{color:var(--ornament-gold);max-width:660px;margin:0 auto;padding:6px 0 18px}
+.hero-ornament svg{width:100%;height:auto;display:block}
