@@ -287,9 +287,7 @@ const GLOSSARY_TERMS = [
   var byName = {};
   GLOSSARY_TERMS.forEach(function (t) { byName[t.name.toLowerCase()] = t; });
 
-  var usedSingle = {};
-
-  function wrapMatches(root, regex, singleOnly) {
+  function wrapMatches(root, regex) {
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode: function (node) {
         var p = node.parentElement;
@@ -308,8 +306,6 @@ const GLOSSARY_TERMS = [
       while ((m = regex.exec(text)) !== null) {
         var term = byName[m[1].toLowerCase()];
         if (!term) continue;
-        if (singleOnly && usedSingle[term.id]) continue;
-        if (singleOnly) usedSingle[term.id] = 1;
         if (!frag) frag = document.createDocumentFragment();
         out.push(document.createTextNode(text.slice(last, m.index)));
         var b = document.createElement('button');
@@ -331,8 +327,8 @@ const GLOSSARY_TERMS = [
 
   if (!glossOff) {
     var scope = document.querySelector('main') || document.body;
-    wrapMatches(scope, multiRe, false);
-    wrapMatches(scope, singleRe, true);
+    wrapMatches(scope, multiRe);
+    wrapMatches(scope, singleRe);
   }
 
   // ---- popup ----
