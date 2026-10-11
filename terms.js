@@ -250,9 +250,9 @@ const GLOSSARY_TERMS = [
   "def": "In mathematics, infinity has precise meanings that depend on the mathematical context. Within the framework’s philosophical usage, infinity can also refer to inexhaustibility: that which cannot be exhausted by any finite expression or completed by a final finite state. These mathematical and interpretive uses should not be conflated."
  },
  {
-  "id": "term-new-potential-after-finitude",
-  "name": "New Potential After Finitude",
-  "def": "A theological interpretation of renewed becoming after a finite state or separation. Within the framework, it describes the possibility of renewed participation in relationship without requiring the elimination of distinction. It is a specialized theological application of new potential, not a replacement for the general definition."
+  "id": "term-new-potential-after-rupture",
+  "name": "New Potential After Rupture",
+  "def": "A theological interpretation of renewed becoming after a rupture or separation. Within the framework, it describes the possibility of renewed participation in relationship without requiring the elimination of distinction. It is a specialized theological application of new potential, not a replacement for the general definition."
  },
  {
   "id": "term-relationship-with-the-source",
