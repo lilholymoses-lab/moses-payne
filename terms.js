@@ -75,6 +75,11 @@ const GLOSSARY_TERMS = [
   "def": "The movement through which reality is described as proceeding from unity through differentiation, possibility, relationship, and becoming, opening new potential for further organization. This is the framework’s account of a recurring generative logic, not a claim that every system follows an identical literal sequence."
  },
  {
+  "id": "term-death",
+  "name": "Death",
+  "def": "Within the framework, death names the complete separation of the relational generative movement of becoming: the point at which a being or thing ceases to participate reciprocally in the relationships through which becoming happens."
+ },
+ {
   "id": "term-organization",
   "name": "Organization",
   "def": "An ordered arrangement of relations that gives a system a degree of stability, structure, or functional coherence. Organization can make patterns persistent and can establish conditions for further becoming."
