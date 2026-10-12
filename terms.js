@@ -65,6 +65,16 @@ const GLOSSARY_TERMS = [
   "def": "The generative process through which organization develops and new forms or capacities emerge through relationship. Becoming is not simply any change; in this framework, it emphasizes the formation of new organization and the opening of further potential."
  },
  {
+  "id": "term-time",
+  "name": "Time",
+  "def": "Time is the unfolding of becoming. As relationships generate change and new configurations, there is an ordering of events: what precedes, what follows, and what emerges. Time, in my metaphysical interpretation, is the byproduct of that unfolding."
+ },
+{
+  "id": "term-space",
+  "name": "Space",
+  "def": "Space is the organization of becoming. As relationships establish distinctions and configurations, things can occupy different positions and stand in different spatial relations. Space, in my framework, expresses this organized dimensionality."
+ },
+ {
   "id": "term-generative",
   "name": "Generative",
   "def": "Having the capacity to produce new organization, a new expression, or further potential through relationship. A generative process does not merely preserve what already exists; it contributes to what can become."
@@ -277,7 +287,7 @@ const GLOSSARY_TERMS = [
   if (typeof GLOSSARY_TERMS === 'undefined' || !Array.isArray(GLOSSARY_TERMS)) return;
   var glossOff = document.body && document.body.getAttribute('data-gloss') === 'off';
 
-  var EXCLUDE_SINGLE = { 'inside': 1, 'outside': 1, 'bridge': 1 };
+  var EXCLUDE_SINGLE = { 'inside': 1, 'outside': 1, 'bridge': 1, 'space': 1, 'time': 1 };
 
   function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
@@ -338,6 +348,58 @@ const GLOSSARY_TERMS = [
 
   if (!glossOff) {
     var scope = document.querySelector('main') || document.body;
+    // ---- compound: "spacetime"/"space-time" -> separate Space + Time highlights ----
+    var spaceTerm = null, timeTerm = null;
+    GLOSSARY_TERMS.forEach(function (t) {
+      if (t.id === 'term-space') spaceTerm = t;
+      if (t.id === 'term-time') timeTerm = t;
+    });
+    function mkGlossSpan(text, term) {
+      var b = document.createElement('span');
+      b.className = 'gloss-term';
+      b.setAttribute('role', 'button');
+      b.setAttribute('tabindex', '0');
+      b.textContent = text;
+      b.setAttribute('data-term-id', term.id);
+      b.setAttribute('aria-label', term.name + ': show definition');
+      return b;
+    }
+    function wrapSpacetime(root) {
+      if (!spaceTerm || !timeTerm) return;
+      var re = /\bspace[-\u2013\u2014]?time\b/gi;
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (node) {
+          var p = node.parentElement;
+          if (!p) return NodeFilter.FILTER_REJECT;
+          if (p.closest('.gloss-term, a, h1, h2, h3, button, .audio-caption, figcaption, #discussion, header, nav, footer, script, style')) return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+      var nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(function (node) {
+        var text = node.nodeValue, m, last = 0, frag = null, out = [];
+        re.lastIndex = 0;
+        while ((m = re.exec(text)) !== null) {
+          var m0 = m[0], si = m0.search(/[-\u2013\u2014]/), spT, sep, tiT;
+          if (si === -1) { spT = m0.slice(0, 5); sep = ''; tiT = m0.slice(5); }
+          else { spT = m0.slice(0, si); sep = m0[si]; tiT = m0.slice(si + 1); }
+          if (!frag) frag = document.createDocumentFragment();
+          out.push(document.createTextNode(text.slice(last, m.index)));
+          out.push(mkGlossSpan(spT, spaceTerm));
+          if (sep) out.push(document.createTextNode(sep));
+          out.push(mkGlossSpan(tiT, timeTerm));
+          last = m.index + m0.length;
+        }
+        if (frag) {
+          out.push(document.createTextNode(text.slice(last)));
+          out.forEach(function (n) { frag.appendChild(n); });
+          node.parentNode.replaceChild(frag, node);
+        }
+      });
+    }
+    wrapSpacetime(scope);
     wrapMatches(scope, multiRe);
     wrapMatches(scope, singleRe);
   }
