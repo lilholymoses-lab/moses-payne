@@ -235,3 +235,6 @@ html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,7
   .navlinks { gap: 14px 18px; font-size: .85rem; }
   .navlinks a[href="manuscript.html"] { font-size: 1.05em; }
 }
+
+.chapter-image{margin:0 0 1.2rem}
+.chapter-image img{width:100%;max-width:520px;height:auto;display:block;border-radius:6px}
