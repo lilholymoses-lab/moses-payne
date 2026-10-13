@@ -229,3 +229,9 @@ html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,7
   .fm-medal .fm-name{font-size:.6rem;padding:0 .2em}
   .fm-panel{padding:.9em 1em}
 }
+
+/* Manuscript nav: 3-row layout */
+@media (max-width: 700px) {
+  .navlinks { gap: 14px 18px; font-size: .85rem; }
+  .navlinks a[href="manuscript.html"] { font-size: 1.05em; }
+}
