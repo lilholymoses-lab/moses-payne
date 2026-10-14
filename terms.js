@@ -67,12 +67,12 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-time",
   "name": "Time",
-  "def": "Time is the unfolding of becoming. As relationships generate change and new configurations, there is an ordering of events: what precedes, what follows, and what emerges. Time, in my metaphysical interpretation, is the byproduct of that unfolding."
+  "def": "Time is the unfolding of definite becoming. As relationships generate change and new configurations, there is an ordering of events: what precedes, what follows, and what emerges. Time, in my metaphysical interpretation, is the byproduct of that unfolding."
  },
 {
   "id": "term-space",
   "name": "Space",
-  "def": "Space is the organization of becoming. As relationships establish distinctions and configurations, things can occupy different positions and stand in different spatial relations. Space, in my framework, expresses this organized dimensionality."
+  "def": "Space is the organization of definite becoming. As relationships establish distinctions and configurations, things can occupy different positions and stand in different spatial relations. Space, in my framework, expresses this organized dimensionality."
  },
  {
   "id": "term-generative",
