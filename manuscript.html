@@ -15,6 +15,12 @@
 .manuscript-scroll .manuscript-audio audio{width:100%;display:block}
 .manuscript-scroll hr.manuscript-rule{border:none;border-top:1px solid #c9b384;margin:0 0 1.2em}
 .verse-num{font-size:.65em;color:#8a6d1f;vertical-align:super;margin-right:.25em;font-weight:bold}
+.verse-nav{display:flex;gap:0.6em;justify-content:center;align-items:center;margin:1.2em auto 0;max-width:42em;flex-wrap:wrap}
+.verse-nav select{font-family:Georgia,serif;font-size:1em;padding:0.45em 0.8em;border:1px solid #c9b384;border-radius:4px;background:#f7efdb;color:#4a3a22;cursor:pointer}
+.verse-nav button{font-family:Georgia,serif;font-size:1em;padding:0.45em 1.2em;border:1px solid #8a6d1f;border-radius:4px;background:#8a6d1f;color:#fff8e8;cursor:pointer;font-variant:small-caps;letter-spacing:.06em}
+.verse-nav button:hover{background:#6e5618}
+[data-theme="dark"] .verse-nav select{background:#2a2418;color:#e8dcc0;border-color:#6e5a2a}
+[data-theme="dark"] .verse-nav button{background:#d9b64a;color:#2a2418;border-color:#d9b64a}
 .chapter-num{display:block;text-align:center;font-size:3.5em;font-weight:bold;color:#8a6d1f;margin:0.8em 0 0.3em;line-height:1}
 [data-theme="dark"] .chapter-num{color:#d9b64a}
 .manuscript-scroll p{text-indent:1.5em;margin:.4em 0}
@@ -34,116 +40,145 @@
 <div class="manuscript-image"><img src="2CD21204-E96C-4E14-A84C-AADC57532274.png" alt="The beginning of reality" loading="lazy"></div>
 <p class="page-desc">A work in progress — a Gnostic-style spiritual scripture on the beginning of reality, to which I will continuously be adding.</p>
 </div>
+<div class="verse-nav">
+<select id="nav-chapter" aria-label="Chapter">
+<option value="1">Chapter 1</option>
+<option value="2">Chapter 2</option>
+<option value="3">Chapter 3</option>
+</select>
+<select id="nav-verse" aria-label="Verse"></select>
+<button onclick="jumpToVerse()">Go</button>
+</div>
+<script>
+function fillVerses(){
+  var ch = document.getElementById('nav-chapter').value;
+  var vs = document.getElementById('nav-verse');
+  vs.innerHTML = '';
+  for(var i=1;i<=33;i++){
+    var o = document.createElement('option');
+    o.value = i; o.textContent = 'Verse ' + i;
+    vs.appendChild(o);
+  }
+}
+function jumpToVerse(){
+  var ch = document.getElementById('nav-chapter').value;
+  var v = document.getElementById('nav-verse').value;
+  var el = document.getElementById('v'+ch+'-'+v);
+  if(el){ el.scrollIntoView({behavior:'smooth',block:'center'}); }
+}
+document.getElementById('nav-chapter').addEventListener('change', fillVerses);
+fillVerses();
+</script>
 <div class="manuscript-scroll">
 <h1>In the Beginning of Reality</h1>
 <hr class="manuscript-rule">
 <span class="chapter-num">1</span>
 <div class="section-audio manuscript-audio"><audio controls preload="metadata" src="Manuscript_ch1_with_title.mp3">Your browser does not support the audio element.</audio></div>
-<p><sup class="verse-num">1:1</sup> Before the heavens and the earth came into being, the Undivided Potential was.</p>
-<p><sup class="verse-num">1:2</sup> It was not emptiness, as one might suppose, for within it lay the possibility of all that might become.</p>
-<p><sup class="verse-num">1:3</sup> Yet no form had appeared, nor had there arisen any boundary by which one thing might be distinguished from another.</p>
-<p><sup class="verse-num">1:4</sup> For all remained within the fullness of the Undivided, and nothing that might become had yet appeared in its own form.</p>
-<p><sup class="verse-num">1:5</sup> Let us therefore speak of how distinction was revealed, and how the many might emerge without the Whole being divided.</p>
-<p><sup class="verse-num">1:6</sup> For the Undivided Potential was whole, yet its fullness was not exhausted by its wholeness.</p>
-<p><sup class="verse-num">1:7</sup> Within it lay the possibility of distinction, and within distinction lay the possibility of expression.</p>
-<p><sup class="verse-num">1:8</sup> And the Undivided Potential differentiated, not by dividing itself, but by revealing what had always been within it.</p>
-<p><sup class="verse-num">1:9</sup> Thus Unity was revealed, the wholeness in which all distinction remained contained.</p>
-<p><sup class="verse-num">1:10</sup> And Possibility was revealed, the openness through which that wholeness might express what had not yet appeared.</p>
-<p><sup class="verse-num">1:11</sup> These were distinguishable, yet neither stood apart from the Source, nor had the Source ceased to be whole.</p>
-<p><sup class="verse-num">1:12</sup> For distinction had arisen, but separation had not; what was revealed remained within that from which it was revealed.</p>
-<p><sup class="verse-num">1:13</sup> And through this distinction, the eternal nature of the Undivided became apparent.</p>
-<p><sup class="verse-num">1:14</sup> This nature was Relationship, which had never been absent from the Source, though its generative character had not yet been revealed.</p>
-<p><sup class="verse-num">1:15</sup> For Relationship was not another being brought forth beside the Undivided, but the eternal nature through which distinction might become generative.</p>
-<p><sup class="verse-num">1:16</sup> Unity was that which remained whole, and Possibility was that through which the unexpressed might emerge.</p>
-<p><sup class="verse-num">1:17</sup> And through their Relationship, what had remained unexpressed could begin to take form.</p>
-<p><sup class="verse-num">1:18</sup> But Relationship did not end with the first distinction, but opened the way for further distinctions to arise.</p>
-<p><sup class="verse-num">1:19</sup> That which emerged became the condition for what might emerge thereafter, and each expression opened the way for another.</p>
-<p><sup class="verse-num">1:20</sup> Thus Relationship was generative, and its movement gave rise to an order through which forms might come to be.</p>
-<p><sup class="verse-num">1:21</sup> And through this order, structure became possible, and the conditions of physical existence began to unfold.</p>
-<p><sup class="verse-num">1:22</sup> For Possibility was not yet actuality, nor was that which might become the same as that which had taken form.</p>
-<p><sup class="verse-num">1:23</sup> Yet through Relationship, the possible could enter into conditions by which it might become actual.</p>
-<p><sup class="verse-num">1:24</sup> And the physical universe emerged, not from an absolute nothing, but as an expression of the eternal movement of becoming.</p>
-<p><sup class="verse-num">1:25</sup> And the heavens spread forth, and worlds arose within the order through which physical forms could exist.</p>
-<p><sup class="verse-num">1:26</sup> And from simpler forms arose greater complexity, until conditions appeared through which life might emerge.</p>
-<p><sup class="verse-num">1:27</sup> And life sustained itself through relationships, preserving its form through the very conditions upon which its existence depended.</p>
-<p><sup class="verse-num">1:28</sup> And within life, relationship became inwardly expressed, until the living could perceive something of its own existence.</p>
-<p><sup class="verse-num">1:29</sup> Thus that which had unfolded throughout the heavens became manifest within the living, and the universe came to behold itself through the forms that had arisen within it.</p>
-<p><sup class="verse-num">1:30</sup> And so the smallest and the greatest bore the mark of the same unfolding, each expressing in its own manner the movement through which forms arise.</p>
-<p><sup class="verse-num">1:31</sup> And though their forms were many, the movement through which they arose was not divided into separate beginnings.</p>
-<p><sup class="verse-num">1:32</sup> Understand, then, that the universe did not bring becoming into existence, nor did physical form give birth to the eternal nature of Relationship.</p>
-<p><sup class="verse-num">1:33</sup> For the universe is not the beginning of Relationship, but its eternal becoming made manifest.</p>
+<p id="v1-1"><sup class="verse-num">1:1</sup> Before the heavens and the earth came into being, the Undivided Potential was.</p>
+<p id="v1-2"><sup class="verse-num">1:2</sup> It was not emptiness, as one might suppose, for within it lay the possibility of all that might become.</p>
+<p id="v1-3"><sup class="verse-num">1:3</sup> Yet no form had appeared, nor had there arisen any boundary by which one thing might be distinguished from another.</p>
+<p id="v1-4"><sup class="verse-num">1:4</sup> For all remained within the fullness of the Undivided, and nothing that might become had yet appeared in its own form.</p>
+<p id="v1-5"><sup class="verse-num">1:5</sup> Let us therefore speak of how distinction was revealed, and how the many might emerge without the Whole being divided.</p>
+<p id="v1-6"><sup class="verse-num">1:6</sup> For the Undivided Potential was whole, yet its fullness was not exhausted by its wholeness.</p>
+<p id="v1-7"><sup class="verse-num">1:7</sup> Within it lay the possibility of distinction, and within distinction lay the possibility of expression.</p>
+<p id="v1-8"><sup class="verse-num">1:8</sup> And the Undivided Potential differentiated, not by dividing itself, but by revealing what had always been within it.</p>
+<p id="v1-9"><sup class="verse-num">1:9</sup> Thus Unity was revealed, the wholeness in which all distinction remained contained.</p>
+<p id="v1-10"><sup class="verse-num">1:10</sup> And Possibility was revealed, the openness through which that wholeness might express what had not yet appeared.</p>
+<p id="v1-11"><sup class="verse-num">1:11</sup> These were distinguishable, yet neither stood apart from the Source, nor had the Source ceased to be whole.</p>
+<p id="v1-12"><sup class="verse-num">1:12</sup> For distinction had arisen, but separation had not; what was revealed remained within that from which it was revealed.</p>
+<p id="v1-13"><sup class="verse-num">1:13</sup> And through this distinction, the eternal nature of the Undivided became apparent.</p>
+<p id="v1-14"><sup class="verse-num">1:14</sup> This nature was Relationship, which had never been absent from the Source, though its generative character had not yet been revealed.</p>
+<p id="v1-15"><sup class="verse-num">1:15</sup> For Relationship was not another being brought forth beside the Undivided, but the eternal nature through which distinction might become generative.</p>
+<p id="v1-16"><sup class="verse-num">1:16</sup> Unity was that which remained whole, and Possibility was that through which the unexpressed might emerge.</p>
+<p id="v1-17"><sup class="verse-num">1:17</sup> And through their Relationship, what had remained unexpressed could begin to take form.</p>
+<p id="v1-18"><sup class="verse-num">1:18</sup> But Relationship did not end with the first distinction, but opened the way for further distinctions to arise.</p>
+<p id="v1-19"><sup class="verse-num">1:19</sup> That which emerged became the condition for what might emerge thereafter, and each expression opened the way for another.</p>
+<p id="v1-20"><sup class="verse-num">1:20</sup> Thus Relationship was generative, and its movement gave rise to an order through which forms might come to be.</p>
+<p id="v1-21"><sup class="verse-num">1:21</sup> And through this order, structure became possible, and the conditions of physical existence began to unfold.</p>
+<p id="v1-22"><sup class="verse-num">1:22</sup> For Possibility was not yet actuality, nor was that which might become the same as that which had taken form.</p>
+<p id="v1-23"><sup class="verse-num">1:23</sup> Yet through Relationship, the possible could enter into conditions by which it might become actual.</p>
+<p id="v1-24"><sup class="verse-num">1:24</sup> And the physical universe emerged, not from an absolute nothing, but as an expression of the eternal movement of becoming.</p>
+<p id="v1-25"><sup class="verse-num">1:25</sup> And the heavens spread forth, and worlds arose within the order through which physical forms could exist.</p>
+<p id="v1-26"><sup class="verse-num">1:26</sup> And from simpler forms arose greater complexity, until conditions appeared through which life might emerge.</p>
+<p id="v1-27"><sup class="verse-num">1:27</sup> And life sustained itself through relationships, preserving its form through the very conditions upon which its existence depended.</p>
+<p id="v1-28"><sup class="verse-num">1:28</sup> And within life, relationship became inwardly expressed, until the living could perceive something of its own existence.</p>
+<p id="v1-29"><sup class="verse-num">1:29</sup> Thus that which had unfolded throughout the heavens became manifest within the living, and the universe came to behold itself through the forms that had arisen within it.</p>
+<p id="v1-30"><sup class="verse-num">1:30</sup> And so the smallest and the greatest bore the mark of the same unfolding, each expressing in its own manner the movement through which forms arise.</p>
+<p id="v1-31"><sup class="verse-num">1:31</sup> And though their forms were many, the movement through which they arose was not divided into separate beginnings.</p>
+<p id="v1-32"><sup class="verse-num">1:32</sup> Understand, then, that the universe did not bring becoming into existence, nor did physical form give birth to the eternal nature of Relationship.</p>
+<p id="v1-33"><sup class="verse-num">1:33</sup> For the universe is not the beginning of Relationship, but its eternal becoming made manifest.</p>
 
 <span class="chapter-num">2</span>
 <div class="section-audio manuscript-audio"><audio controls preload="metadata" src="Manuscript_ch2_slower.mp3">Your browser does not support the audio element.</audio></div>
-<p><sup class="verse-num">2:1</sup> And within the living, consciousness arose, and the universe came to behold itself through the forms that had emerged within it.</p>
-<p><sup class="verse-num">2:2</sup> And in the beginning, the human being dwelt in union with the Source, distinct in its own existence, yet never separated from the One from which its being arose.</p>
-<p><sup class="verse-num">2:3</sup> For distinction did not diminish their unity, nor did their differences place them beyond the embrace of the Whole. Each remained within the Relationship through which all things received their being.</p>
-<p><sup class="verse-num">2:4</sup> And in this union, life was not a possession held apart from the Source, but a gift continually sustained through Relationship. Nothing stood alone, for all participated in the fullness from which they had emerged.</p>
-<p><sup class="verse-num">2:5</sup> And this was the beauty of their beginning: that each could exist as itself without ceasing to belong, and that the many could flourish without the Whole being divided.</p>
-<p><sup class="verse-num">2:6</sup> For there was no need to climb toward the Source as though it were distant, nor to grasp for the fullness of life as though it could be possessed apart from its origin. They dwelt within the Relationship that sustained them, and in that union, becoming was not a struggle to overcome separation, but a participation in the fullness of life.</p>
-<p><sup class="verse-num">2:7</sup> Yet the power to behold was also the power to turn inward, to distinguish oneself from what lay beyond, and to consider oneself apart from the Whole.</p>
-<p><sup class="verse-num">2:8</sup> For distinction was necessary that one thing might be known from another, but distinction was never meant to become separation.</p>
-<p><sup class="verse-num">2:9</sup> And the human being began to regard its own existence as though it were its own beginning, forgetting the Source from which its becoming had arisen.</p>
-<p><sup class="verse-num">2:10</sup> Thus the creature that had received its being through Relationship sought to become the author of its own becoming, desiring to possess within itself the fullness that could never be severed from the Source.</p>
-<p><sup class="verse-num">2:11</sup> And this was the beginning of the rupture: not that the Whole had been divided, nor that Relationship had ceased to exist, but that the being who had emerged through Relationship began to live as though it stood apart from it.</p>
-<p><sup class="verse-num">2:12</sup> And what had once been distinction within unity was now experienced as separation, and what had once been participation in the Source became the struggle to exist apart from it.</p>
-<p><sup class="verse-num">2:13</sup> And the human being looked upon itself and saw not the fullness from which it had emerged, but its own limitation; and, fearing its finitude, it sought to overcome that limitation through its own power.</p>
-<p><sup class="verse-num">2:14</sup> Yet the more it reached for a fullness it could not possess, the more it became entangled in the very separation it sought to escape.</p>
-<p><sup class="verse-num">2:15</sup> For it grasped at what it could not hold, climbed toward what it could not reach, and built upon itself what could not sustain itself apart from the Source.</p>
-<p><sup class="verse-num">2:16</sup> And so the human being descended into the depths of its own making, not because the Source had ceased to sustain its existence, but because it no longer understood its existence as participation in the Source.</p>
-<p><sup class="verse-num">2:17</sup> And in this separation, death entered into the human condition, for that which had turned away from the Source of life could not find within itself the power to sustain its own becoming forever.</p>
-<p><sup class="verse-num">2:18</sup> For the creature had mistaken its life as something possessed in itself, forgetting that its existence was sustained through a Relationship it could neither create nor replace.</p>
-<p><sup class="verse-num">2:19</sup> And so death became the shadow of separation, a reminder that no form, however wondrous, could make itself eternal apart from the Source from which its being arose.</p>
-<p><sup class="verse-num">2:20</sup> Yet even in death, the Source was not undone, nor was the eternal nature of Relationship extinguished; for the creature's separation could not destroy the ground upon which its existence had always depended.</p>
-<p><sup class="verse-num">2:21</sup> There, beneath the heights toward which it strained, it found itself among the fragments of its own becoming, reaching and clawing against the darkness, seeking a way upward through the strength of its own hands.</p>
-<p><sup class="verse-num">2:22</sup> Yet every grasp brought it only to another ledge, and every ascent revealed another depth beyond it; for no finite strength could overcome the rupture by which it had mistaken separation for freedom.</p>
-<p><sup class="verse-num">2:23</sup> And the more it struggled to become whole by itself, the more it forgot that wholeness had never been something it could create alone.</p>
-<p><sup class="verse-num">2:24</sup> For the path back to the Source could not be built from the depths of separation, as though separation itself possessed the power to restore what it had forgotten.</p>
-<p><sup class="verse-num">2:25</sup> Nor could the creature return to the Source by becoming its own source, for that which receives its being cannot become the origin of the being it has received.</p>
-<p><sup class="verse-num">2:26</sup> The way home, therefore, was not the destruction of distinction, nor the undoing of all that had become, but the restoration of Relationship: the return of the separated heart to the Source upon which its existence had always depended.</p>
-<p><sup class="verse-num">2:27</sup> And this return could not be accomplished by the creature alone, for the very condition from which it sought deliverance had become the condition through which it understood itself.</p>
-<p><sup class="verse-num">2:28</sup> Therefore, the way home required more than the creature's reaching upward; it required the Source to meet the creature within the depths into which it had descended.</p>
-<p><sup class="verse-num">2:29</sup> For the Source had not abandoned what had emerged from it, nor had the eternal nature of Relationship been exhausted by the creature's refusal to live within it.</p>
-<p><sup class="verse-num">2:30</sup> And what the creature could not accomplish by its own ascent, the Source would make possible through its own descent, entering into the conditions of becoming to open a way through which the separated might be reconciled.</p>
-<p><sup class="verse-num">2:31</sup> Thus the way home would not be found by escaping relationship, but by entering into it once more; not by erasing distinction, but by restoring the unity in which distinction could remain without separation.</p>
-<p><sup class="verse-num">2:32</sup> And the Source would not remain distant from the depths into which humanity had fallen, nor would the way of return be revealed through another creature striving to ascend; for the way would be opened by the Source itself, entering into the very conditions of becoming.</p>
-<p><sup class="verse-num">2:33</sup> And this was the mystery toward which all becoming had been moving: that the eternal Relationship through which all things came to be would take on the form of a human life, and that through Jesus the Christ, the way back to the Source would be made manifest.</p>
+<p id="v2-1"><sup class="verse-num">2:1</sup> And within the living, consciousness arose, and the universe came to behold itself through the forms that had emerged within it.</p>
+<p id="v2-2"><sup class="verse-num">2:2</sup> And in the beginning, the human being dwelt in union with the Source, distinct in its own existence, yet never separated from the One from which its being arose.</p>
+<p id="v2-3"><sup class="verse-num">2:3</sup> For distinction did not diminish their unity, nor did their differences place them beyond the embrace of the Whole. Each remained within the Relationship through which all things received their being.</p>
+<p id="v2-4"><sup class="verse-num">2:4</sup> And in this union, life was not a possession held apart from the Source, but a gift continually sustained through Relationship. Nothing stood alone, for all participated in the fullness from which they had emerged.</p>
+<p id="v2-5"><sup class="verse-num">2:5</sup> And this was the beauty of their beginning: that each could exist as itself without ceasing to belong, and that the many could flourish without the Whole being divided.</p>
+<p id="v2-6"><sup class="verse-num">2:6</sup> For there was no need to climb toward the Source as though it were distant, nor to grasp for the fullness of life as though it could be possessed apart from its origin. They dwelt within the Relationship that sustained them, and in that union, becoming was not a struggle to overcome separation, but a participation in the fullness of life.</p>
+<p id="v2-7"><sup class="verse-num">2:7</sup> Yet the power to behold was also the power to turn inward, to distinguish oneself from what lay beyond, and to consider oneself apart from the Whole.</p>
+<p id="v2-8"><sup class="verse-num">2:8</sup> For distinction was necessary that one thing might be known from another, but distinction was never meant to become separation.</p>
+<p id="v2-9"><sup class="verse-num">2:9</sup> And the human being began to regard its own existence as though it were its own beginning, forgetting the Source from which its becoming had arisen.</p>
+<p id="v2-10"><sup class="verse-num">2:10</sup> Thus the creature that had received its being through Relationship sought to become the author of its own becoming, desiring to possess within itself the fullness that could never be severed from the Source.</p>
+<p id="v2-11"><sup class="verse-num">2:11</sup> And this was the beginning of the rupture: not that the Whole had been divided, nor that Relationship had ceased to exist, but that the being who had emerged through Relationship began to live as though it stood apart from it.</p>
+<p id="v2-12"><sup class="verse-num">2:12</sup> And what had once been distinction within unity was now experienced as separation, and what had once been participation in the Source became the struggle to exist apart from it.</p>
+<p id="v2-13"><sup class="verse-num">2:13</sup> And the human being looked upon itself and saw not the fullness from which it had emerged, but its own limitation; and, fearing its finitude, it sought to overcome that limitation through its own power.</p>
+<p id="v2-14"><sup class="verse-num">2:14</sup> Yet the more it reached for a fullness it could not possess, the more it became entangled in the very separation it sought to escape.</p>
+<p id="v2-15"><sup class="verse-num">2:15</sup> For it grasped at what it could not hold, climbed toward what it could not reach, and built upon itself what could not sustain itself apart from the Source.</p>
+<p id="v2-16"><sup class="verse-num">2:16</sup> And so the human being descended into the depths of its own making, not because the Source had ceased to sustain its existence, but because it no longer understood its existence as participation in the Source.</p>
+<p id="v2-17"><sup class="verse-num">2:17</sup> And in this separation, death entered into the human condition, for that which had turned away from the Source of life could not find within itself the power to sustain its own becoming forever.</p>
+<p id="v2-18"><sup class="verse-num">2:18</sup> For the creature had mistaken its life as something possessed in itself, forgetting that its existence was sustained through a Relationship it could neither create nor replace.</p>
+<p id="v2-19"><sup class="verse-num">2:19</sup> And so death became the shadow of separation, a reminder that no form, however wondrous, could make itself eternal apart from the Source from which its being arose.</p>
+<p id="v2-20"><sup class="verse-num">2:20</sup> Yet even in death, the Source was not undone, nor was the eternal nature of Relationship extinguished; for the creature's separation could not destroy the ground upon which its existence had always depended.</p>
+<p id="v2-21"><sup class="verse-num">2:21</sup> There, beneath the heights toward which it strained, it found itself among the fragments of its own becoming, reaching and clawing against the darkness, seeking a way upward through the strength of its own hands.</p>
+<p id="v2-22"><sup class="verse-num">2:22</sup> Yet every grasp brought it only to another ledge, and every ascent revealed another depth beyond it; for no finite strength could overcome the rupture by which it had mistaken separation for freedom.</p>
+<p id="v2-23"><sup class="verse-num">2:23</sup> And the more it struggled to become whole by itself, the more it forgot that wholeness had never been something it could create alone.</p>
+<p id="v2-24"><sup class="verse-num">2:24</sup> For the path back to the Source could not be built from the depths of separation, as though separation itself possessed the power to restore what it had forgotten.</p>
+<p id="v2-25"><sup class="verse-num">2:25</sup> Nor could the creature return to the Source by becoming its own source, for that which receives its being cannot become the origin of the being it has received.</p>
+<p id="v2-26"><sup class="verse-num">2:26</sup> The way home, therefore, was not the destruction of distinction, nor the undoing of all that had become, but the restoration of Relationship: the return of the separated heart to the Source upon which its existence had always depended.</p>
+<p id="v2-27"><sup class="verse-num">2:27</sup> And this return could not be accomplished by the creature alone, for the very condition from which it sought deliverance had become the condition through which it understood itself.</p>
+<p id="v2-28"><sup class="verse-num">2:28</sup> Therefore, the way home required more than the creature's reaching upward; it required the Source to meet the creature within the depths into which it had descended.</p>
+<p id="v2-29"><sup class="verse-num">2:29</sup> For the Source had not abandoned what had emerged from it, nor had the eternal nature of Relationship been exhausted by the creature's refusal to live within it.</p>
+<p id="v2-30"><sup class="verse-num">2:30</sup> And what the creature could not accomplish by its own ascent, the Source would make possible through its own descent, entering into the conditions of becoming to open a way through which the separated might be reconciled.</p>
+<p id="v2-31"><sup class="verse-num">2:31</sup> Thus the way home would not be found by escaping relationship, but by entering into it once more; not by erasing distinction, but by restoring the unity in which distinction could remain without separation.</p>
+<p id="v2-32"><sup class="verse-num">2:32</sup> And the Source would not remain distant from the depths into which humanity had fallen, nor would the way of return be revealed through another creature striving to ascend; for the way would be opened by the Source itself, entering into the very conditions of becoming.</p>
+<p id="v2-33"><sup class="verse-num">2:33</sup> And this was the mystery toward which all becoming had been moving: that the eternal Relationship through which all things came to be would take on the form of a human life, and that through Jesus the Christ, the way back to the Source would be made manifest.</p>
 
 <span class="chapter-num">3</span>
 <div class="section-audio manuscript-audio"><audio controls preload="metadata" src="Manuscript_ch3_hadfixed.mp3">Your browser does not support the audio element.</audio></div>
-<p><sup class="verse-num">3:1</sup> And the time came when the way of return, once beyond the reach of humanity's own strength, would be revealed within the life of a human being.</p>
-<p><sup class="verse-num">3:2</sup> For humanity had reached for the Source through its own strength, yet could not overcome the depths into which it had descended.</p>
-<p><sup class="verse-num">3:3</sup> Therefore, the Source did not answer the creature's helplessness by demanding that it climb higher, but by entering the depths itself.</p>
-<p><sup class="verse-num">3:4</sup> And the eternal Relationship through which all things had come to be entered into the conditions of becoming, accepting the limits of a human life without ceasing to be what it eternally was.</p>
-<p><sup class="verse-num">3:5</sup> And the Word became flesh, and the infinite entered the finite, not to abolish the distinction between them, but to unite them without separation.</p>
-<p><sup class="verse-num">3:6</sup> And this was made manifest in Jesus the Christ, who entered the world not as a distant observer of human suffering, but as one who would bear its weight from within.</p>
-<p><sup class="verse-num">3:7</sup> He entered the life of humanity through birth, grew in the weakness of the body, knew hunger and weariness, and walked among those whose lives were marked by sorrow, fear, and death.</p>
-<p><sup class="verse-num">3:8</sup> And wherever he went, he revealed a way of being that humanity had forgotten: to exist as oneself without turning away from the Source, and to love another without seeking to possess or dominate them.</p>
-<p><sup class="verse-num">3:9</sup> For he did not grasp at power to establish his own greatness, nor did he seek to become his own source, but lived in perfect communion with the Father, revealing through his life the Relationship that had never ceased to sustain all things.</p>
-<p><sup class="verse-num">3:10</sup> And he drew near to the forgotten, touched the unclean, welcomed the rejected, and lifted those whom others had cast aside, revealing that no creature was beyond the reach of divine compassion.</p>
-<p><sup class="verse-num">3:11</sup> And he spoke of a kingdom not established through domination, but through love, mercy, forgiveness, and the restoration of Relationship; and in his presence, the estranged glimpsed the possibility of returning home.</p>
-<p><sup class="verse-num">3:12</sup> Yet the light he revealed also exposed the darkness in which humanity had become entangled, for those who had mistaken power for greatness could not easily receive a love that refused to rule through fear.</p>
-<p><sup class="verse-num">3:13</sup> And though he came to restore Relationship, he was betrayed by one who had walked beside him, denied by one who had loved him, and abandoned by those who had promised to remain.</p>
-<p><sup class="verse-num">3:14</sup> And he entered the garden in anguish, knowing the suffering that lay before him, and his soul was troubled beneath the weight of what he was about to endure.</p>
-<p><sup class="verse-num">3:15</sup> For he did not approach death as though the suffering of the body were unreal, nor did he treat the agony of the human condition as something beneath him; he entered it fully, bearing the vulnerability of the life he had taken upon himself.</p>
-<p><sup class="verse-num">3:16</sup> And in his anguish, he prayed to the Father, surrendering his will without ceasing to love, and accepted the path that lay before him.</p>
-<p><sup class="verse-num">3:17</sup> For the way of return would not be opened by escaping the human condition, nor by overcoming death through the refusal to suffer, but by entering the very depths in which humanity had become imprisoned.</p>
-<p><sup class="verse-num">3:18</sup> And so he was seized, condemned, mocked, struck, and spat on, and the one who had offered mercy received cruelty in return.</p>
-<p><sup class="verse-num">3:19</sup> He who had lifted the fallen was made to stumble beneath the weight of the cross, and he who had given life was led toward the place of execution.</p>
-<p><sup class="verse-num">3:20</sup> And upon the cross, his hands were pierced, his body was broken by suffering, and the life he had received in human form approached its mortal end.</p>
-<p><sup class="verse-num">3:21</sup> And there, in the darkness of that hour, the consequences of separation gathered around him: betrayal, violence, humiliation, loneliness, suffering, and death.</p>
-<p><sup class="verse-num">3:22</sup> Yet he did not answer hatred with hatred, nor violence with violence, nor cruelty with the desire to destroy those who had wounded him; even in his suffering, he remained turned toward love.</p>
-<p><sup class="verse-num">3:23</sup> And he cried out in the anguish of abandonment, giving voice to the depths of human suffering, entering the place where the creature could no longer perceive the nearness of the Source.</p>
-<p><sup class="verse-num">3:24</sup> Yet the eternal Relationship was not destroyed, nor was the Source divided against itself; rather, the Son entered the full anguish of human mortality, bearing even the darkness in which the presence of God seemed lost.</p>
-<p><sup class="verse-num">3:25</sup> And this was the mystery of the Cross: that the Source of life had entered the shadow of death, not because death had overcome the Source, but because the Source had come to meet humanity within the condition it could not overcome alone.</p>
-<p><sup class="verse-num">3:26</sup> For the Source did not need to be restored to wholeness, nor did the eternal Relationship require healing; it was humanity that needed reconciliation, and the way of reconciliation was opened through the self-giving love revealed in Jesus the Christ.</p>
-<p><sup class="verse-num">3:27</sup> And when his suffering had reached its end, he breathed his last, and his body was laid within a tomb, and those who had hoped in him were overcome with grief.</p>
-<p><sup class="verse-num">3:28</sup> And the stone was set in place, and the silence of death settled over the place where he lay, and it seemed that the darkness had swallowed the one who had come to reveal the light.</p>
-<p><sup class="verse-num">3:29</sup> Yet what appeared to be the final defeat was not the end of the story, for the Source had not entered death to remain imprisoned within it, but to open the way beyond it.</p>
-<p><sup class="verse-num">3:30</sup> And on the third day, the tomb was found empty, for Jesus the Christ had risen from the dead, and the life that had entered the shadow of death was revealed as victorious over it.</p>
-<p><sup class="verse-num">3:31</sup> And the Resurrection declared that death would not possess the final word over the human condition, nor would the rupture of Relationship determine the ultimate destiny of all that the Source had brought into being.</p>
-<p><sup class="verse-num">3:32</sup> For the way home had been opened, not through humanity's ascent toward an unreachable Source, but through the Source's descent into humanity, meeting suffering with love and death with the promise of life.</p>
-<p><sup class="verse-num">3:33</sup> And thus, through Jesus the Christ, the eternal Relationship was revealed as the way of reconciliation: not the erasure of distinction, nor the division of the Source, but the restoration of the creature to communion with the One from whom its life had always been received.</p>
+<p id="v3-1"><sup class="verse-num">3:1</sup> And the time came when the way of return, once beyond the reach of humanity's own strength, would be revealed within the life of a human being.</p>
+<p id="v3-2"><sup class="verse-num">3:2</sup> For humanity had reached for the Source through its own strength, yet could not overcome the depths into which it had descended.</p>
+<p id="v3-3"><sup class="verse-num">3:3</sup> Therefore, the Source did not answer the creature's helplessness by demanding that it climb higher, but by entering the depths itself.</p>
+<p id="v3-4"><sup class="verse-num">3:4</sup> And the eternal Relationship through which all things had come to be entered into the conditions of becoming, accepting the limits of a human life without ceasing to be what it eternally was.</p>
+<p id="v3-5"><sup class="verse-num">3:5</sup> And the Word became flesh, and the infinite entered the finite, not to abolish the distinction between them, but to unite them without separation.</p>
+<p id="v3-6"><sup class="verse-num">3:6</sup> And this was made manifest in Jesus the Christ, who entered the world not as a distant observer of human suffering, but as one who would bear its weight from within.</p>
+<p id="v3-7"><sup class="verse-num">3:7</sup> He entered the life of humanity through birth, grew in the weakness of the body, knew hunger and weariness, and walked among those whose lives were marked by sorrow, fear, and death.</p>
+<p id="v3-8"><sup class="verse-num">3:8</sup> And wherever he went, he revealed a way of being that humanity had forgotten: to exist as oneself without turning away from the Source, and to love another without seeking to possess or dominate them.</p>
+<p id="v3-9"><sup class="verse-num">3:9</sup> For he did not grasp at power to establish his own greatness, nor did he seek to become his own source, but lived in perfect communion with the Father, revealing through his life the Relationship that had never ceased to sustain all things.</p>
+<p id="v3-10"><sup class="verse-num">3:10</sup> And he drew near to the forgotten, touched the unclean, welcomed the rejected, and lifted those whom others had cast aside, revealing that no creature was beyond the reach of divine compassion.</p>
+<p id="v3-11"><sup class="verse-num">3:11</sup> And he spoke of a kingdom not established through domination, but through love, mercy, forgiveness, and the restoration of Relationship; and in his presence, the estranged glimpsed the possibility of returning home.</p>
+<p id="v3-12"><sup class="verse-num">3:12</sup> Yet the light he revealed also exposed the darkness in which humanity had become entangled, for those who had mistaken power for greatness could not easily receive a love that refused to rule through fear.</p>
+<p id="v3-13"><sup class="verse-num">3:13</sup> And though he came to restore Relationship, he was betrayed by one who had walked beside him, denied by one who had loved him, and abandoned by those who had promised to remain.</p>
+<p id="v3-14"><sup class="verse-num">3:14</sup> And he entered the garden in anguish, knowing the suffering that lay before him, and his soul was troubled beneath the weight of what he was about to endure.</p>
+<p id="v3-15"><sup class="verse-num">3:15</sup> For he did not approach death as though the suffering of the body were unreal, nor did he treat the agony of the human condition as something beneath him; he entered it fully, bearing the vulnerability of the life he had taken upon himself.</p>
+<p id="v3-16"><sup class="verse-num">3:16</sup> And in his anguish, he prayed to the Father, surrendering his will without ceasing to love, and accepted the path that lay before him.</p>
+<p id="v3-17"><sup class="verse-num">3:17</sup> For the way of return would not be opened by escaping the human condition, nor by overcoming death through the refusal to suffer, but by entering the very depths in which humanity had become imprisoned.</p>
+<p id="v3-18"><sup class="verse-num">3:18</sup> And so he was seized, condemned, mocked, struck, and spat on, and the one who had offered mercy received cruelty in return.</p>
+<p id="v3-19"><sup class="verse-num">3:19</sup> He who had lifted the fallen was made to stumble beneath the weight of the cross, and he who had given life was led toward the place of execution.</p>
+<p id="v3-20"><sup class="verse-num">3:20</sup> And upon the cross, his hands were pierced, his body was broken by suffering, and the life he had received in human form approached its mortal end.</p>
+<p id="v3-21"><sup class="verse-num">3:21</sup> And there, in the darkness of that hour, the consequences of separation gathered around him: betrayal, violence, humiliation, loneliness, suffering, and death.</p>
+<p id="v3-22"><sup class="verse-num">3:22</sup> Yet he did not answer hatred with hatred, nor violence with violence, nor cruelty with the desire to destroy those who had wounded him; even in his suffering, he remained turned toward love.</p>
+<p id="v3-23"><sup class="verse-num">3:23</sup> And he cried out in the anguish of abandonment, giving voice to the depths of human suffering, entering the place where the creature could no longer perceive the nearness of the Source.</p>
+<p id="v3-24"><sup class="verse-num">3:24</sup> Yet the eternal Relationship was not destroyed, nor was the Source divided against itself; rather, the Son entered the full anguish of human mortality, bearing even the darkness in which the presence of God seemed lost.</p>
+<p id="v3-25"><sup class="verse-num">3:25</sup> And this was the mystery of the Cross: that the Source of life had entered the shadow of death, not because death had overcome the Source, but because the Source had come to meet humanity within the condition it could not overcome alone.</p>
+<p id="v3-26"><sup class="verse-num">3:26</sup> For the Source did not need to be restored to wholeness, nor did the eternal Relationship require healing; it was humanity that needed reconciliation, and the way of reconciliation was opened through the self-giving love revealed in Jesus the Christ.</p>
+<p id="v3-27"><sup class="verse-num">3:27</sup> And when his suffering had reached its end, he breathed his last, and his body was laid within a tomb, and those who had hoped in him were overcome with grief.</p>
+<p id="v3-28"><sup class="verse-num">3:28</sup> And the stone was set in place, and the silence of death settled over the place where he lay, and it seemed that the darkness had swallowed the one who had come to reveal the light.</p>
+<p id="v3-29"><sup class="verse-num">3:29</sup> Yet what appeared to be the final defeat was not the end of the story, for the Source had not entered death to remain imprisoned within it, but to open the way beyond it.</p>
+<p id="v3-30"><sup class="verse-num">3:30</sup> And on the third day, the tomb was found empty, for Jesus the Christ had risen from the dead, and the life that had entered the shadow of death was revealed as victorious over it.</p>
+<p id="v3-31"><sup class="verse-num">3:31</sup> And the Resurrection declared that death would not possess the final word over the human condition, nor would the rupture of Relationship determine the ultimate destiny of all that the Source had brought into being.</p>
+<p id="v3-32"><sup class="verse-num">3:32</sup> For the way home had been opened, not through humanity's ascent toward an unreachable Source, but through the Source's descent into humanity, meeting suffering with love and death with the promise of life.</p>
+<p id="v3-33"><sup class="verse-num">3:33</sup> And thus, through Jesus the Christ, the eternal Relationship was revealed as the way of reconciliation: not the erasure of distinction, nor the division of the Source, but the restoration of the creature to communion with the One from whom its life had always been received.</p>
 </div>
 </div></section></main>
 <footer>© Moses · The Geometry of Becoming</footer>
