@@ -238,3 +238,7 @@ html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,7
 
 .chapter-image{margin:0 0 1.2rem}
 .chapter-image img{width:100%;max-width:520px;height:auto;display:block;border-radius:6px}
+
+/* Further Readings citation links: underlined with a soft gold glow */
+.src-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-shadow:0 0 7px rgba(217,182,74,.45)}
+.src-link:hover{text-shadow:0 0 9px rgba(217,182,74,.95),0 0 20px rgba(217,182,74,.55)}
