@@ -15,6 +15,11 @@ const GLOSSARY_TERMS = [
   "def": "The emergence of distinction within unity. Differentiation allows what is held together within a whole to become distinct in modes, patterns, functions, forms, or directions without requiring absolute separation from the whole."
  },
  {
+  "id": "term-the-many",
+  "name": "The Many",
+  "def": "The distinct things that emerge from the One \u2014 the different forms, beings, and expressions of reality that arise from the original unity."
+ },
+ {
   "id": "term-possibility",
   "name": "Possibility",
   "def": "The range of ways something could become under the conditions available to it. Possibility describes what may occur; by itself, it does not determine what will occur."
