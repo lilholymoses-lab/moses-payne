@@ -250,3 +250,5 @@ a.featured-title:hover{text-decoration:underline;text-underline-offset:4px}
 .featured-sub{font-style:italic;color:var(--muted);margin:.7rem 0 0;font-size:1.05rem}
 
 #welcome{border-bottom:0}
+
+.featured-soon{font-style:italic;color:var(--muted);margin:.6rem 0 0;font-size:.92rem;letter-spacing:.14em;text-transform:uppercase}
