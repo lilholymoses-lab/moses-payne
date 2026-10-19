@@ -242,3 +242,9 @@ html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,7
 /* Further Readings citation links: underlined with a soft gold glow */
 .src-link{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;text-shadow:0 0 7px rgba(217,182,74,.45)}
 .src-link:hover{text-shadow:0 0 9px rgba(217,182,74,.95),0 0 20px rgba(217,182,74,.55)}
+
+.featured-entry{text-align:center;margin:3rem auto 0;max-width:42rem;padding:2.2rem 1.2rem;border-top:1px solid var(--ornament-gold);border-bottom:1px solid var(--ornament-gold)}
+.featured-entry .ornament{margin:0 0 14px}
+.featured-title{font-family:Georgia,'Times New Roman',serif;font-size:2rem;font-weight:700;color:var(--ornament-gold);text-decoration:none;letter-spacing:.01em}
+a.featured-title:hover{text-decoration:underline;text-underline-offset:4px}
+.featured-sub{font-style:italic;color:var(--muted);margin:.7rem 0 0;font-size:1.05rem}
