@@ -248,3 +248,5 @@ html[data-theme="dark"] .fm-medal[aria-pressed="true"]{background:rgba(217,182,7
 .featured-title{font-family:Georgia,'Times New Roman',serif;font-size:2rem;font-weight:700;color:var(--ornament-gold);text-decoration:none;letter-spacing:.01em}
 a.featured-title:hover{text-decoration:underline;text-underline-offset:4px}
 .featured-sub{font-style:italic;color:var(--muted);margin:.7rem 0 0;font-size:1.05rem}
+
+#welcome{border-bottom:0}
