@@ -252,3 +252,7 @@ a.featured-title:hover{text-decoration:underline;text-underline-offset:4px}
 #welcome{border-bottom:0}
 
 .featured-soon{font-style:italic;color:var(--muted);margin:.6rem 0 0;font-size:.92rem;letter-spacing:.14em;text-transform:uppercase}
+
+.bridge-toc{max-width:780px;margin:0 auto 2.5rem;text-align:left}
+.bridge-toc h3{margin-bottom:.5rem}
+.bridge-toc ol{margin:0;padding-left:1.4em;line-height:1.9}
