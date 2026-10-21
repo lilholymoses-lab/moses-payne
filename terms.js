@@ -147,7 +147,7 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-physical-actuality",
   "name": "Physical Actuality",
-  "def": "The definite physical expression of an organized condition as a distinguishable physical form or event. Physical actuality does not mean only something visible or touchable; it includes physical entities and processes that are not tangible in the everyday sense. In the six-level sequence, this is the specific sense of actuality associated with the transition from Structure to Actuality."
+  "def": "The definite physical expression of an organized condition as a distinguishable physical form, entity, or event. Physical actuality marks the point at which an organized condition is expressed in a specific physical instance, rather than remaining only as the underlying relationships and conditions that make such expression possible. This does not mean that the underlying condition disappears; rather, its organization is expressed through a particular physical form. Physical actuality does not mean only something visible or touchable. It includes physical entities and processes that may not be directly perceptible to human senses but are identifiable through appropriate physical observation or measurement. Within this framework, actuality distinguishes the organization that makes a physical expression possible from the definite expression itself. In the six-level sequence, it names the transition from Structure to Actuality: the movement from organized conditions to their expression as particular physical forms or events."
  },
  {
   "id": "term-ontological-delay",
