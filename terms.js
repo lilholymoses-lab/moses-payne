@@ -52,7 +52,7 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-reciprocal-dynamism",
   "name": "Reciprocal Dynamism",
-  "def": "Within the framework, reciprocal dynamism names the mutual, active character of relationship: becoming happens not to isolated things, but through their reciprocal participation in one another."
+  "def": "Within the framework, reciprocal dynamism names the living activity inside relationship. The dynamism is the movement itself: each participant gives and receives, acts and is acted upon, continually shaping and being shaped by the other. Becoming is driven by this ongoing two-way exchange, not by anything acting alone."
  },
  {
   "id": "term-relationality",
