@@ -47,7 +47,7 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-relationship",
   "name": "Relationship",
-  "def": "A structured reciprocal dynamism through which distinct centers or aspects co-arise, influence one another, and participate in further becoming. Within this framework, relationship is not merely an interaction between already completed things; it can contribute to the formation of what relational participants become."
+  "def": "A structured reciprocal dynamism through which distinct centers or aspects co-arise, influence one another, and participate in further becoming. Within this framework, relationship is not just an interaction between already completed things; it can contribute to the formation of what relational participants become."
  },
  {
   "id": "term-reciprocal-dynamism",
