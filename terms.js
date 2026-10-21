@@ -37,7 +37,7 @@ const GLOSSARY_TERMS = [
  {
   "id": "term-relational-field",
   "name": "Relational Field",
-  "def": "The underlying relational ground within which differentiation, possibility, relationship, and becoming can occur. In this framework, the term refers to a proposed deeper relational condition and is not synonymous with a physical field such as a quantum field."
+  "def": "The underlying relational ground within which differentiation, possibility, relationship, and becoming can occur within creation. In this framework, the term refers to a proposed deeper relational condition and is not synonymous with a physical field such as a quantum field."
  },
  {
   "id": "term-divine-relational-field",
